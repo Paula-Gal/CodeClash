@@ -17,7 +17,8 @@ class User(db.Model, UserMixin):
     _confirmed_account = db.Column(db.Boolean(), nullable=False, default=False)
     _confirmed_on = db.Column(db.DateTime(), nullable=True)
 
-    def __init__(self, email, password, first_name, last_name):
+    def __init__(self, email, password, first_name, last_name, **kwargs):
+        super(User, self).__init__(**kwargs)
         self.email = email
         self.password = password
         self.first_name = first_name
