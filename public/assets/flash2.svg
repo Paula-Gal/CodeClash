@@ -1,0 +1,20 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <symbol id="svg_1" width="24" viewBox="0 0 24 24" height="24">
+   <path fill="none" d="m0,0l24,0l0,24l-24,0l0,-24z"/>
+   <path d="m7,3l0,9c0,0.55 0.45,1 1,1l2,0l0,7.15c0,0.51 0.67,0.69 0.93,0.25l5.19,-8.9c0.39,-0.67 -0.09,-1.5 -0.86,-1.5l-2.26,0l2.49,-6.65c0.25,-0.65 -0.23,-1.35 -0.93,-1.35l-6.56,0c-0.55,0 -1,0.45 -1,1z"/>
+  </symbol>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="#42a5f5" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <use x="23.83861" y="11.06282" transform="matrix(19.73751265138189,0,0,19.73751265138189,-304.10404201509726,-154.11574332076225) " xlink:href="#svg_1" id="svg_2"/>
+ </g>
+</svg>
