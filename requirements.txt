@@ -3,4 +3,7 @@ flask_login
 flask_sqlalchemy
 flask_admin
 flask_basicauth
+flask_socketio
 werkzeug
+gevent
+gevent-websocket
