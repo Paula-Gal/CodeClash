@@ -72,3 +72,6 @@ class User(db.Model, UserMixin):
     def confirm_account(self):
         self._register_on = datetime.datetime.now()
         self._confirmed_account = True
+
+    def check_password(self, password):
+        return self.hash_password(password) == self._password
