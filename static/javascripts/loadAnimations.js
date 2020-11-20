@@ -1,10 +1,15 @@
 var scroll = window.requestAnimationFrame ||
   function (callback) { window.setTimeout(callback, 1000 / 60) };
 
-var bounceElements = document.querySelectorAll('.bounce-on-scroll');
+window.onscroll = function() {scrollEvent()};
 
-function isElementInViewport(el) {
-  var viewport_offset = 2.25; // 2 - jumatatea superioara a ecranului (inceput de div, nu centrat), 1 - tot ecranul
+var bounceElements = document.querySelectorAll('.bounce-on-scroll');
+var floatElements = document.querySelectorAll('.float-on-scroll');
+var promo = document.getElementById('promo');
+var float_speeds = ['animation-float-slow', 'animation-float-medium', 'animation-float-fast'];
+
+function isElementInViewport(el, viewport_offset = 1) {
+  //viewport_offset ex 2 - jumatatea superioara a ecranului (inceput de div, nu centrat), 1 - tot ecranul
   if (typeof jQuery === "function" && el instanceof jQuery) {
     el = el[0];
   }
@@ -21,19 +26,55 @@ function isElementInViewport(el) {
   );
 }
 
-function loop() {
-  bounceElements.forEach(function (element) {
-    if (isElementInViewport(element)) {
-      // Scale promo up
-      if (!element.classList.contains("animation-scale-up")) {
+function scrollEvent(){
+  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+    if (window.innerWidth > 600)
+      document.getElementById("promo").style.padding = "3rem";
+    else
+      document.getElementById("promo").style.padding = "2rem";
+    bounceElements.forEach(function (element) {
+      if (isElementInViewport(element, 1.2)){
         element.classList.add('animation-scale-up');
         element.classList.remove('animation-scale-down');
       }
-    } else {
-      // Scale promo back down
-      if (element.classList.contains("animation-scale-up")) {
+    }); 
+    
+  } else {
+    document.getElementById("promo").style.padding = "1rem";
+    bounceElements.forEach(function (element) {
+      if (isElementInViewport(element) && element.classList.contains('animation-scale-up')){
         element.classList.remove('animation-scale-up');
         element.classList.add('animation-scale-down');
+      }
+    }); 
+  }
+  bounceElements.forEach(function (element) {
+    if (!isElementInViewport(element) && element.classList.contains('animation-scale-up')){
+      element.classList.remove('animation-scale-up');
+      element.classList.add('animation-scale-down');
+    }
+  }); 
+}
+
+
+function loop() {
+
+  floatElements.forEach(function (element) {
+    if (isElementInViewport(element)) {
+      if (!element.classList.contains("nu_mai_adauga_animation")) {
+        // fa cumva sa nu se mai repete functia asta
+        // si la un interval
+        element.classList.add("nu_mai_adauga_animation");
+        var timeout = Math.floor(Math.random() * 1500);
+        var random_index = Math.floor(Math.random() * 3);
+        setTimeout(function(){element.classList.add(float_speeds[random_index]);}, timeout);
+      }
+    }
+    else {
+      // dont float this bitch
+      if (element.classList.contains("nu_mai_adauga_animation")){
+        element.classList.remove('nu_mai_adauga_animation');
+        float_speeds.forEach(function (speed){element.classList.remove(speed);});
       }
     }
   });
