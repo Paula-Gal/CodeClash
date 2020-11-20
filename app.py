@@ -4,7 +4,7 @@ from App.Database import db
 from App.Blueprints.Landing import landing
 from App.LoginManager import login_manager
 from App.Blueprints.Administrator import admin
-from App.Websockets.base import websockets
+from App.Websockets import websockets
 from config import BasicConfig
 
 

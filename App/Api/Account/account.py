@@ -142,8 +142,8 @@ def handle_update_password():
     try:
         current_user.password = new_password
         db.session.commit()
-        return successful_response('')
+        return successful_response()
     except ValueError:
         pass
 
-    raise BadRequest('BaseError', 'Unknown error occurred')
+    raise BadRequest('ValueError', 'Unknown error occurred')

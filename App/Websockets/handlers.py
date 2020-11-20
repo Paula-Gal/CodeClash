@@ -1,3 +1,5 @@
+from flask import request
+
 from .base import websockets, ws_login_required
 
 
@@ -23,4 +25,10 @@ def _error_handler(e):
 @ws_login_required
 def _handle_message(message):
     print('<WS>: Received message: ' + message)
+    pass
+
+
+@websockets.on('find_match')
+@ws_login_required
+def _handle_find_match():
     pass
