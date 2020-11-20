@@ -1,0 +1,36 @@
+
+.float-on-scroll {
+    box-sizing: border-box;
+	border: 0.3rem white solid;
+	border-radius: 10%;
+	overflow: hidden;
+	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+}
+
+
+/*      Promo       */
+#promo{
+    padding-top: 1.25rem;
+    transition: 0.4s;
+    padding-bottom: 1.25rem;
+    background-color: var(--promo-background);
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.2);
+}
+
+.promo-image{
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    width: 100px;
+    height: 100px;
+}
+
+.promo-text{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.promo-undertext{
+    font-size: 0.85rem;
+    font-weight: 300;
+}

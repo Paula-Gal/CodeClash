@@ -1,6 +1,6 @@
 import datetime
 import random
-from App.Websockets import websockets, ws_login_required, emit
+from App.Websockets import websockets, ws_login_required, get_user_session_id
 from ..base import get_request_data, api
 from flask_login import current_user
 from App.Database import Match, ProblemTest, db, User
@@ -52,8 +52,8 @@ def _handle_find_game():
         red_user = User.query.filter_by(id=match.red_user_id).first()
         blue_user = User.query.filter_by(id=match.blue_user_id).first()
 
-        websockets.emit('start_game', {}, room=red_user.email)
-        websockets.emit('start_game', {}, room=blue_user.email)
+        websockets.emit('start_game', {}, room=get_user_session_id(red_user))
+        websockets.emit('start_game', {}, room=get_user_session_id(blue_user))
 
 
 @websockets.on('cancel_game')
