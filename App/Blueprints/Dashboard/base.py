@@ -17,3 +17,8 @@ gameRoom = Blueprint(
     __name__,
     template_folder='templates'
 )
+waiting = Blueprint(
+    'waiting',
+    __name__,
+    template_folder = 'templates'
+)

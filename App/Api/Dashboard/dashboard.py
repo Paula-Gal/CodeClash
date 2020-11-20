@@ -36,7 +36,7 @@ waiting_for_match = []
 def _handle_find_game():
     global waiting_for_match
 
-    print("here")
+    print("Finding game 4 u...")
 
     if current_user.id not in waiting_for_match:
         waiting_for_match.append(current_user.id)

@@ -7,6 +7,7 @@ from App.Blueprints.Landing import landing
 from App.Blueprints.Dashboard import dashboard
 from App.Blueprints.Dashboard import learningenv
 from App.Blueprints.Dashboard import gameRoom
+from App.Blueprints.Dashboard import waiting
 from App.LoginManager import login_manager
 from App.Blueprints.Administrator import admin
 from App.Websockets.base import websockets
@@ -27,6 +28,7 @@ app.register_blueprint(landing)
 app.register_blueprint(dashboard)
 app.register_blueprint(learningenv)
 app.register_blueprint(gameRoom)
+app.register_blueprint(waiting)
 
 
 admin.init_app(app)
