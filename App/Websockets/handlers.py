@@ -6,10 +6,11 @@ from .base import websockets, ws_login_required
 
 
 @websockets.on('connect')
-@ws_login_required
+#@ws_login_required
 def _handle_connect():
-    # print('<WS>: Client ' + str(request.sid) + ' connected')
-    join_room(current_user.email)
+    print('<WS>: Client ' + str(request.sid) + ' connected')
+    #join_room(current_user.email)
+    websockets.emit('msg', data = "salut")
     pass
 
 

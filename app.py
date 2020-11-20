@@ -11,6 +11,7 @@ from App.LoginManager import login_manager
 from App.Blueprints.Administrator import admin
 from App.Websockets.base import websockets
 from config import BasicConfig
+from App.Api.Dashboard.dashboard import *
 
 
 app = Flask(__name__)
