@@ -5,5 +5,5 @@ flask_admin
 flask_basicauth
 flask_socketio
 werkzeug
-gevent
+gevent==20.9.0
 gevent-websocket
