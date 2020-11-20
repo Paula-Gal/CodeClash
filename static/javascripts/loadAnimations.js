@@ -28,17 +28,16 @@ function isElementInViewport(el, viewport_offset = 1) {
 
 function scrollEvent(){
   if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-    console.log("aaaaaa");
     document.getElementById("promo").style.padding = "3rem";
     bounceElements.forEach(function (element) {
       if (isElementInViewport(element, 1.2)){
+       main
         element.classList.add('animation-scale-up');
         element.classList.remove('animation-scale-down');
       }
     }); 
     
   } else {
-    console.log("bbbbbb");
     bounceElements.forEach(function (element) {
       if (isElementInViewport(element, 1.2) && element.classList.contains('animation-scale-up')){
         element.classList.remove('animation-scale-up');
