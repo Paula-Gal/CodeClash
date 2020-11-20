@@ -36,4 +36,3 @@ with app.app_context():
 websockets.init_app(app)
 
 websockets.run(app, log_output=True, debug=True, port=5000)
-#app.run(debug=True)
