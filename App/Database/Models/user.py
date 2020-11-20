@@ -23,7 +23,7 @@ class User(db.Model, UserMixin):
         self.password = password
         self.first_name = first_name
         self.last_name = last_name
-        self._register_on = datetime.datetime.now()
+        self._registered_on = datetime.datetime.now()
 
     @staticmethod
     def hash_password(password):
@@ -43,7 +43,7 @@ class User(db.Model, UserMixin):
 
     @password.setter
     def password(self, value):
-        self._email = self.hash_password(value)
+        self._password = self.hash_password(value)
 
     @property
     def first_name(self):

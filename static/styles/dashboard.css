@@ -1,0 +1,106 @@
+.background {
+    background: var(--dashboard-background);
+}
+
+#important-message {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/*      <Ranked Leaderboard Title>      */
+
+.row>.col-md-5>.text-center>p.bold-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.light-text {
+    color: var(--light-text);
+}
+
+/*        Buttons         */
+
+.btn-dashboard {
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 160px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 0% !important;
+}
+
+/*btn_background*/
+
+.effect04 {
+    --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+    display: var(--uismLinkDisplay);
+    color: #000;
+    outline: solid 2px #000;
+    position: relative;
+    transition-duration: 0.4s;
+    overflow: hidden;
+}
+
+.effect04::before, .effect04 span {
+    margin: 0 auto;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    transition-duration: 0.4s;
+}
+
+/* 文字1を上に */
+
+.effect04:hover {
+    background-color: #000;
+}
+
+/* HOVERしたら文字1を上に */
+
+.effect04:hover span {
+    -webkit-transform: translateY(-400%) scale(-0.1, 20);
+    transform: translateY(-400%) scale(-0.1, 20);
+}
+
+/*文字2*/
+
+.effect04::before {
+    content: attr(data-sm-link-text);
+    color: #FFF;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -webkit-transform: translateY(500%) scale(-0.1, 20);
+    transform: translateY(500%) scale(-0.1, 20);
+}
+
+/* HOVERしたら文字2を上に */
+
+.effect04:hover::before {
+    letter-spacing: 0.05em;
+    -webkit-transform: translateY(0) scale(1, 1);
+    transform: translateY(0) scale(1, 1);
+}
+
+#loading {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--dashboard-background-light);
+    background-image: url("/static/assets/loading.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 4rem;
+}
+
+.page {
+    display: none;
+}

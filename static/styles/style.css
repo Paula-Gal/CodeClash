@@ -24,7 +24,16 @@
     --button-primary-pressed-border: #000000;
     --button-primary-pressed-shadow: rgba(0, 0, 0, 0.5);
 
-    --promo-background: rgb(63, 161, 226);
+    --promo-background: #e7e7e7;
+    --landing-background: #f6f6f6;
+
+    /*      Dashboard       */
+    --dashboard-background: #f6f6f6;
+    --dashboard-background-light: #ffffff;
+
+    --btn-dashboard-text: #ffffff;
+
+    --light-text: #1d1d1d;
 }
 
 

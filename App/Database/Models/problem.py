@@ -10,8 +10,8 @@ class Problem(db.Model):
     description = db.Column(db.String(), nullable=False)
     difficulty = db.Column(db.Integer(), nullable=False)
 
-    def __init__(self):
-        pass
+    #def __init__(self):
+    #    pass
 
     """@property
     def name(self):
