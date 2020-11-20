@@ -28,8 +28,10 @@ function isElementInViewport(el, viewport_offset = 1) {
 
 function scrollEvent(){
   if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-    if (window.innerWidth > 600)
+    if (window.innerWidth > 600){
       document.getElementById("promo").style.padding = "3rem";
+      document.getElementById("promo").style.boxShadow="0px 8px 10px 8px rgba(0,0,0,0.2)";
+    }
     else
       document.getElementById("promo").style.padding = "2rem";
     bounceElements.forEach(function (element) {
@@ -41,6 +43,7 @@ function scrollEvent(){
     
   } else {
     document.getElementById("promo").style.padding = "1rem";
+    document.getElementById("promo").style.boxShadow="0px 0px 7px 0px rgba(0,0,0,0.2)";
     bounceElements.forEach(function (element) {
       if (isElementInViewport(element) && element.classList.contains('animation-scale-up')){
         element.classList.remove('animation-scale-up');
