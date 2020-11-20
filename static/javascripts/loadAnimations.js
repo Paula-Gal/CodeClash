@@ -31,7 +31,6 @@ function scrollEvent(){
     document.getElementById("promo").style.padding = "3rem";
     bounceElements.forEach(function (element) {
       if (isElementInViewport(element, 1.2)){
-       main
         element.classList.add('animation-scale-up');
         element.classList.remove('animation-scale-down');
       }
