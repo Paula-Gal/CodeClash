@@ -4,4 +4,5 @@ function findGame(){
 
 socket.on("start_game", () => {
     console.log("Game started!");
+    location.replace('/room')
 });
