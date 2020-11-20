@@ -1,7 +1,8 @@
 var blobs = document.querySelectorAll('.blob');
+
 window.onload = function () {
     setVisible('.page', false);
-    $('.page').fadeIn();
+    $('.page').fadeIn(500);
 }
 
 onReady(function () {
@@ -27,5 +28,5 @@ function onReady(callback) {
 }
 
 function setVisible(selector, visible) {
-    document.querySelector(selector).style.display = visible ? 'flex' : 'none';
+    document.querySelector(selector).style.display = visible ? 'block' : 'none';
 }
