@@ -4,13 +4,13 @@ from .base import websockets, ws_login_required
 @websockets.on('connect')
 @ws_login_required
 def _handle_connect():
-    print('<WS>: Client ' + str(request.sid) + ' connected')
+    #print('<WS>: Client ' + str(request.sid) + ' connected')
     pass
 
 
 @websockets.on('disconnect')
 def _handle_disconnect():
-    print('<WS>: Client ' + str(request.sid) + ' disconnected')
+    #print('<WS>: Client ' + str(request.sid) + ' disconnected')
     pass
 
 
