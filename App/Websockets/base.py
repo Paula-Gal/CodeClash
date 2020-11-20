@@ -1,4 +1,4 @@
-#import flask_socketio
+import flask_socketio
 import functools
 from flask_login import current_user
 
@@ -14,4 +14,4 @@ def ws_login_required(f):
     return wrapped
 
 
-#websockets = flask_socketio.SocketIO(ping_timeout=30, async_mode='gevent')
+websockets = flask_socketio.SocketIO(ping_timeout=30, async_mode='gevent')
