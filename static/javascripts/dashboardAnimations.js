@@ -1,18 +1,17 @@
 window.onload = function () {
     $('.btn-dashboard').addClass('scale-up-center');
-    document.getElementById("loading").style.display = "none";
-    $('#loading').fadeIn();
+    $('#loading').fadeIn(350);
 }
 
 onReady(function () {
     var page = $('.page');
     var loading = $('#loading');
-    loading.fadeOut();
-    setTimeout(function(){page.fadeIn();}, 300);
+    loading.fadeOut(350);
+    setTimeout(function(){page.fadeIn(1000-350);}, 350);
     setTimeout(function(){
         setVisible('.page', true);
         setVisible('#loading', false);
-    }, 1000);
+    }, 500);
 });
 
 function onReady(callback) {
@@ -24,18 +23,6 @@ function onReady(callback) {
     }, 1000);
 }
 
-function fade(element) {
-    var op = 1;  // initial opacity
-    var timer = setInterval(function () {
-        if (op <= 0.1){
-            clearInterval(timer);
-            element.style.display = 'none';
-        }
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op -= op * 0.1;
-    }, 50);
-}
 
 function setVisible(selector, visible) {
     document.querySelector(selector).style.display = visible ? 'block' : 'none';
