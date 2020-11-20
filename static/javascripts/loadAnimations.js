@@ -28,24 +28,32 @@ function isElementInViewport(el, viewport_offset = 1) {
 
 function scrollEvent(){
   if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-    document.getElementById("promo").style.padding = "3rem";
+    if (window.innerWidth > 600)
+      document.getElementById("promo").style.padding = "3rem";
+    else
+      document.getElementById("promo").style.padding = "2rem";
     bounceElements.forEach(function (element) {
       if (isElementInViewport(element, 1.2)){
-       main
         element.classList.add('animation-scale-up');
         element.classList.remove('animation-scale-down');
       }
     }); 
     
   } else {
+    document.getElementById("promo").style.padding = "1rem";
     bounceElements.forEach(function (element) {
-      if (isElementInViewport(element, 1.2) && element.classList.contains('animation-scale-up')){
+      if (isElementInViewport(element) && element.classList.contains('animation-scale-up')){
         element.classList.remove('animation-scale-up');
         element.classList.add('animation-scale-down');
-        document.getElementById("promo").style.padding = "1rem";
       }
     }); 
   }
+  bounceElements.forEach(function (element) {
+    if (!isElementInViewport(element) && element.classList.contains('animation-scale-up')){
+      element.classList.remove('animation-scale-up');
+      element.classList.add('animation-scale-down');
+    }
+  }); 
 }
 
 
