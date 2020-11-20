@@ -1,7 +1,3 @@
-  socket.on("msg", function(data){
-    console.log("mesaj: " + data)
-  });
-
 function goToWaitingRoom(){
     window.location = "/waiting-room";
 }

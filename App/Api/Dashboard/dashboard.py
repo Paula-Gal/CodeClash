@@ -38,22 +38,25 @@ def _handle_find_game():
 
     print("Finding game 4 u...")
 
-    if current_user.id not in waiting_for_match:
+    '''if current_user.id not in waiting_for_match:
         waiting_for_match.append(current_user.id)
 
     print(current_user.email)
 
     if len(waiting_for_match) == 2:
+        print("System: Found 2 players")
         match = Match(waiting_for_match.pop(), waiting_for_match.pop(), True, datetime.timedelta(minutes=5))
         db.session.add(match)
         match.begin()
         db.session.commit()
 
         red_user = User.query.filter_by(id=match.red_user_id).first()
-        blue_user = User.query.filter_by(id=match.blue_user_id).first()
+        blue_user = User.query.filter_by(id=match.blue_user_id).first()'''
 
-        websockets.emit('start_game', {}, room=get_user_session_id(red_user))
-        websockets.emit('start_game', {}, room=get_user_session_id(blue_user))
+        #websockets.emit('start_game', {}, room=get_user_session_id(red_user))
+        #websockets.emit('start_game', {}, room=get_user_session_id(blue_user))
+    websockets.emit('start_game', {})
+    websockets.emit('start_game', {})
 
 
 @websockets.on('cancel_game')
