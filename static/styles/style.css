@@ -144,6 +144,33 @@
     font-weight: 700;
 }
 
+.dashboard-btn{
+    width: 300px !important;
+}
+
+.algorithm-subtitle{
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+hr {
+    border-top: 0px solid blue !important;
+    padding: 0;
+    margin-top: 0.5em !important;
+    border-width: 6px !important;
+    border-radius: 5px;
+    width: 245px;
+  }
+
+.algorithm-text{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#important-message{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
 .float-on-scroll {
     box-sizing: border-box;
 	border: 0.3rem white solid;

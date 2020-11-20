@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="240px" viewBox="0 0 320 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <!-- <rect fill="#FFFFFF" x="0" y="0" width="320" height="240"></rect> -->
+        <line x1="62.25" y1="186.75" x2="262.25" y2="63.75" id="Line" stroke="#606060" strokeWidth="2.5" strokeLinecap="square"></line>
+        <line x1="39.5" y1="74.5" x2="39.5" y2="169.5" id="Line" stroke="#606060" strokeWidth="2.5" strokeLinecap="square"></line>
+        <circle id="Oval" stroke="#606060" strokeWidth="2" fill="#57BAE0" cx="39.5" cy="46.5" r="26.875"></circle>
+        <text id="Paris" font-family="Helvetica" font-size="20" font-weight="normal" letter-spacing="0.003348212" fill="#FFFFFF">
+            <tspan x="34" y="53">0</tspan>
+        </text>
+        <circle id="Oval" stroke="#606060" strokeWidth="2" fill="#57BAE0" cx="279.5" cy="46.5" r="26.875"></circle>
+        <text id="Rome" font-family="Helvetica" font-size="20" font-weight="normal" letter-spacing="0.003348212" fill="#FFFFFF">
+            <tspan x="274" y="53">1</tspan>
+        </text>
+        <circle id="Oval" stroke="#606060" strokeWidth="2" fill="#57BAE0" cx="279.5" cy="196.5" r="26.875"></circle>
+        <text id="Berlin" font-family="Helvetica" font-size="20" font-weight="normal" letter-spacing="0.003348212" fill="#FFFFFF">
+            <tspan x="274" y="203">3</tspan>
+        </text>
+        <circle id="Oval" stroke="#606060" strokeWidth="2" fill="#57BAE0" cx="39.5" cy="196.5" r="26.875"></circle>
+        <text id="London" font-family="Helvetica" font-size="20" font-weight="normal" letter-spacing="0.003348212" fill="#FFFFFF">
+            <tspan x="34" y="203">2</tspan>
+        </text>
+        <line x1="279.5" y1="74.5" x2="279.5" y2="169" id="Line" stroke="#606060" strokeWidth="2.5" strokeLinecap="square"></line>
+        <line x1="67.5" y1="46.5" x2="252.25" y2="46.75" id="Line" stroke="#606060" strokeWidth="2.5" strokeLinecap="square"></line>
+    </g>
+</svg>
