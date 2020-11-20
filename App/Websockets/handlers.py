@@ -1,10 +1,19 @@
+from flask import request
+from flask_login import current_user
+from flask_socketio import join_room, emit
+
 from .base import websockets, ws_login_required
+
+
+def get_user_session_id(user):
+    return user.email
 
 
 @websockets.on('connect')
 @ws_login_required
 def _handle_connect():
-    #print('<WS>: Client ' + str(request.sid) + ' connected')
+    # print('<WS>: Client ' + str(request.sid) + ' connected')
+    join_room(get_user_session_id(current_user))
     pass
 
 
@@ -24,3 +33,4 @@ def _error_handler(e):
 def _handle_message(message):
     print('<WS>: Received message: ' + message)
     pass
+
