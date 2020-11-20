@@ -1,0 +1,8 @@
+.blob {
+    background: black;
+    border-radius: 20%;
+    display: inline-block;
+    margin: 1.5rem;
+    height: 1.75rem;
+    width: 1.75rem;
+}
