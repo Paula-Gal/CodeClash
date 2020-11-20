@@ -12,6 +12,7 @@ from App.Blueprints.Administrator import admin
 from App.Websockets.base import websockets
 from App.Tests.database import populate_database
 from config import BasicConfig
+from App.Api.Dashboard.dashboard import *
 
 
 app = Flask(__name__)

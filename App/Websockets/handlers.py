@@ -10,16 +10,19 @@ def get_user_session_id(user):
 
 
 @websockets.on('connect')
-@ws_login_required
+#@ws_login_required
 def _handle_connect():
-    # print('<WS>: Client ' + str(request.sid) + ' connected')
+    print('<WS>: Client ' + str(request.sid) + ' connected')
+    #join_room(current_user.email)
+    websockets.emit('msg', data = "salut")
+    print('<WS>: Client ' + str(request.sid) + ' connected')
     join_room(get_user_session_id(current_user))
     pass
 
 
 @websockets.on('disconnect')
 def _handle_disconnect():
-    #print('<WS>: Client ' + str(request.sid) + ' disconnected')
+    print('<WS>: Client ' + str(request.sid) + ' disconnected')
     pass
 
 

@@ -31,11 +31,12 @@ def _handle_submit_code(message):
 
 waiting_for_match = []
 
-
 @websockets.on('find_game')
-@ws_login_required
+#@ws_login_required
 def _handle_find_game():
     global waiting_for_match
+
+    print("here")
 
     if current_user.id not in waiting_for_match:
         waiting_for_match.append(current_user.id)
