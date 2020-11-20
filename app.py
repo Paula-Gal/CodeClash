@@ -10,6 +10,8 @@ from App.Blueprints.Dashboard import gameRoom
 from App.Blueprints.Dashboard import waiting
 from App.LoginManager import login_manager
 from App.Blueprints.Administrator import admin
+from App.Blueprints.Account import login
+#from App.Websockets.base import websockets
 from App.Websockets.base import websockets
 from App.Tests.database import populate_database
 from config import BasicConfig
@@ -27,6 +29,7 @@ login_manager.init_app(app)
 app.register_blueprint(landing)
 app.register_blueprint(dashboard)
 app.register_blueprint(learningenv)
+app.register_blueprint(login)
 app.register_blueprint(gameRoom)
 app.register_blueprint(waiting)
 
