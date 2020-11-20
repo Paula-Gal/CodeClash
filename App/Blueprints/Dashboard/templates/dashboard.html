@@ -38,6 +38,14 @@
     </nav>
 
     <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <span id = "important-message">Remember: {Comments} are a must!</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
         <div class="row justify-content-center h-75 row-reverse-on-small">
             <div class="col-md-5 col-sm-12">
                 <div class="text-center">
@@ -46,11 +54,11 @@
             </div>
             <div class="col-md-5 offset-md-2 col-sm-12">
                 <div class="text-center">
-                    <button class="btn btn-lg btn-primary mb-4 dashboard-btn mt-3" type="submit" data-toggle="modal" data-target="#exampleModalCenter">Fast match</button>
+                    <button class="btn btn-lg btn-success mb-4 dashboard-btn mt-3" type="submit" data-toggle="modal" data-target="#exampleModalCenter">Fast match</button>
                     <br>
-                    <button class="btn btn-lg btn-primary mb-4 dashboard-btn mt-4" type="submit">Create room</button>
+                    <button class="btn btn-lg btn-warning mb-4 dashboard-btn mt-4" type="submit">Create room</button>
                     <br>
-                    <button class="btn btn-lg btn-primary mb-4 dashboard-btn mt-4" type="submit">Learning environment</button>
+                    <a href = "dashboard/learning-environment" class="btn btn-lg btn-info mb-4 dashboard-btn mt-4" type="submit">Learning environment</a>
                 </div>
             </div>
         </div>
@@ -119,6 +127,21 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script src = "static/javascripts/dashboardAnimations.js"></script>
+    <script>
+        var messages = ["Remember: </span><b>{Comments}</b><span> are a must!", "Remember: Without </span><b>{asserts}</b><span> your program is awful!", "Remember: Always start with your </span><b>{tests}</b>!<span>"];
+        var indice = 1;
+
+        function updateText(){
+            $("#important-message").html(messages[indice++]);
+            if(indice >= messages.length) indice = 0;
+        }
+
+        var func = updateText();
+
+        setInterval(function () {
+            updateText();
+        }, 4000);
+    </script>
 
 </body>
 </html>

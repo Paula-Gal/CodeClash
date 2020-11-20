@@ -5,3 +5,9 @@ dashboard = Blueprint(
     __name__,
     template_folder='templates'
 )
+
+learningenv = Blueprint(
+    'learningenv',
+    __name__,
+    template_folder='templates'
+)
