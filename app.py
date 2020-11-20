@@ -10,6 +10,7 @@ from App.Blueprints.Dashboard import gameRoom
 from App.LoginManager import login_manager
 from App.Blueprints.Administrator import admin
 from App.Websockets.base import websockets
+from App.Tests.database import populate_database
 from config import BasicConfig
 
 
@@ -32,6 +33,7 @@ admin.init_app(app)
 
 with app.app_context():
     db.create_all()
+    populate_database()
 
 websockets.init_app(app)
 

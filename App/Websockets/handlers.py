@@ -5,11 +5,15 @@ from flask_socketio import join_room, emit
 from .base import websockets, ws_login_required
 
 
+def get_user_session_id(user):
+    return user.email
+
+
 @websockets.on('connect')
 @ws_login_required
 def _handle_connect():
     # print('<WS>: Client ' + str(request.sid) + ' connected')
-    join_room(current_user.email)
+    join_room(get_user_session_id(current_user))
     pass
 
 
