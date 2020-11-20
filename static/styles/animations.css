@@ -1,80 +1,9 @@
-.animation-scale-up2{
-  animation: scalingUp linear .25s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  transform-origin: 50% 50%;
-  -webkit-animation: scalingUp linear .25s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-transform-origin: 50% 50%;
-  -moz-animation: scalingUp linear .25s;
-  -moz-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-  -moz-transform-origin: 50% 50%;
-  -o-animation: scalingUp linear .25s;
-  -o-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-  -o-transform-origin: 50% 50%;
-  -ms-animation: scalingUp linear .25s;
-  -ms-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-  -ms-transform-origin: 50% 50%;
-}
-
-@keyframes scalingUp{
-  0% {
-    transform:  scaleX(1.00) scaleY(1.00) ;
-  }
-  100% {
-    transform:  scaleX(1.50) scaleY(1.50) ;
-  }
-}
-
-@-moz-keyframes scalingUp{
-  0% {
-    -moz-transform:  scaleX(1.00) scaleY(1.00) ;
-  }
-  100% {
-    -moz-transform:  scaleX(1.50) scaleY(1.50) ;
-  }
-}
-
-@-webkit-keyframes scalingUp {
-  0% {
-    -webkit-transform:  scaleX(1.00) scaleY(1.00) ;
-  }
-  100% {
-    -webkit-transform:  scaleX(1.50) scaleY(1.50) ;
-  }
-}
-
-@-o-keyframes scalingUp {
-  0% {
-    -o-transform:  scaleX(1.00) scaleY(1.00) ;
-  }
-  100% {
-    -o-transform:  scaleX(1.50) scaleY(1.50) ;
-  }
-}
-
-@-ms-keyframes scalingUp {
-  0% {
-    -ms-transform:  scaleX(1.00) scaleY(1.00) ;
-  }
-  100% {
-    -ms-transform:  scaleX(1.50) scaleY(1.50) ;
-  }
-}
-
-
-
 .animation-scale-up {
   -webkit-animation: scaleUP 1000ms linear both;
   -webkit-animation-fill-mode: forwards;
   animation: scaleUP 1000ms linear both;
   animation-fill-mode: forwards;
 }
-
 
 @-webkit-keyframes scaleUP { 
   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
@@ -227,4 +156,32 @@
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+.animation-float-slow {
+  animation: float 12s ease-in-out infinite;
+}
+
+.animation-float-medium {
+  animation: float 11s ease-in-out infinite;
+}
+
+.animation-float-fast {
+  animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-13px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+
 }
