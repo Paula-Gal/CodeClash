@@ -33,6 +33,14 @@ class Match(db.Model):
     def end_time(self):
         return self._end_time
 
+    @property
+    def red_user_id(self):
+        return self._red_user_id
+
+    @property
+    def blue_user_id(self):
+        return self._blue_user_id
+
     def begin(self):
         self._start_time = datetime.datetime.now()
 
