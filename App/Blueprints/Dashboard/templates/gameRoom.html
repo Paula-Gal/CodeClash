@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/styles/style.css">
     <link rel="stylesheet" href="/static/styles/breakpoints.css">
+    <link rel="stylesheet" type="text/css" href="/static/devc.css">
 </head>
 
-<body>
+<body id = "index" class = "home">
 
     <nav class="navbar navbar-expand-lg bg-dark" id="mainNav">
         <a class="navbar-brand" href="/">Code Clash</a>
@@ -73,6 +74,74 @@
         
 
     </div>
+
+    <div class="container mt-5">
+
+        <div id="links">
+            <ul>
+            <li><a href="/">C Code</a></li>
+            <li><a href="/cpp">C++ Code</a></li>
+            <li><a href="/py">Python Code</a></li>
+            </ul>
+        </div>
+
+        <div class="row h-75">
+            <div class="col-md-12">
+                    <!-- ************  CODING ZONE  ************ -->
+                <form method="post" action="/room">
+                    <div id="title-code" class="head-section">
+                    Source Code
+                    </div>
+                    <textarea id="text-code" name="code" rows={{ rows }} cols={{ cols }}>
+                        {{ code }}
+                        </textarea><br/>
+                        <div id="text-code-ace" class="hidden">{{ code }}</div>
+                        <div class = "text-center">
+                            <input id="launch-button" class="btn btn-lg btn-primary mb-4 mt-3" type="submit" value="Run code" />
+                        </div>
+                </form>
+                    
+            </div>
+
+            <div class="col-md-12">
+                <div id="title-result" class="head-section">
+                    Output result
+                </div>
+                {% if resrun == 'No run done' %}
+                    <textarea id="text-result" rows="18" cols="140" readonly>{{ rescomp }}</textarea>
+                {% else %}
+                    <textarea id="text-result" rows="18" cols="140" readonly>{{ resrun }}</textarea>
+                {% endif %}
+            </div>
+
+            <!--<div class="col-md-12">
+                <div id="title-compile" class="head-section">
+                    Compilation / Output
+                </div>
+                <textarea id="text-compile" rows="7" cols="140" readonly>{{ rescomp }}</textarea>
+            </div>-->
+        </div>
+    </div>
+
+
+    <script src="/static/ace/ace.js"></script>
+
+    <script>
+        var editorElement = document.getElementById("text-code");
+        editorElement.classList.add("hidden");
+        document.getElementById("text-code-ace").classList.remove("hidden");
+    
+        var editor = ace.edit("text-code-ace");
+        editor.setTheme("ace/theme/tomorrow");
+        var language = ("{{ target }}" === "runpy") ? "python" : "c_cpp";
+        editor.getSession().setMode("ace/mode/" + language);
+    
+        // Make sure we copy the content of the editor to the textarea before posting
+        // its content to the server
+        document.getElementById("launch-button").addEventListener("click", function () {
+            editorElement.innerHTML = editor.getValue();
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
