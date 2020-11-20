@@ -31,7 +31,7 @@ function scrollEvent(){
     console.log("aaaaaa");
     document.getElementById("promo").style.padding = "3rem";
     bounceElements.forEach(function (element) {
-      if (isElementInViewport(element, 1)){
+      if (isElementInViewport(element, 1.2)){
         element.classList.add('animation-scale-up');
         element.classList.remove('animation-scale-down');
       }
@@ -40,7 +40,7 @@ function scrollEvent(){
   } else {
     console.log("bbbbbb");
     bounceElements.forEach(function (element) {
-      if (isElementInViewport(element, 1) && element.classList.contains('animation-scale-up')){
+      if (isElementInViewport(element, 1.2) && element.classList.contains('animation-scale-up')){
         element.classList.remove('animation-scale-up');
         element.classList.add('animation-scale-down');
         document.getElementById("promo").style.padding = "1rem";
@@ -51,23 +51,6 @@ function scrollEvent(){
 
 
 function loop() {
-  /*
-  bounceElements.forEach(function (element) {
-    if (isElementInViewport(element, 1.7)) {
-      // Scale promo up
-      if (!element.classList.contains("animation-scale-up")) {
-        element.classList.add('animation-scale-up');
-        element.classList.remove('animation-scale-down');
-      }
-    } else {
-      // Scale promo back down
-      if (element.classList.contains("animation-scale-up")) {
-        element.classList.remove('animation-scale-up');
-        element.classList.add('animation-scale-down');
-      }
-    }
-  });
-*/
 
   floatElements.forEach(function (element) {
     if (isElementInViewport(element)) {
