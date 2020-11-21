@@ -13,5 +13,4 @@ def load_user(user_id):
 
 @login_manager.unauthorized_handler
 def unauthorised():
-    return 'PLease login'
-    # return redirect(url_for('', next=request.url))
+    return redirect(url_for('account.handle_login', next=request.url))

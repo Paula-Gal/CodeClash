@@ -1,4 +1,5 @@
 function findGame(){
+    console.log("ma apelez");
     socket.emit("find_game");
 }
 

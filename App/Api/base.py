@@ -4,7 +4,7 @@ from flask import Blueprint, request, json, jsonify
 api = Blueprint(
     'api',
     __name__,
-    url_prefix='api'
+    # url_prefix='/api'
 )
 
 
@@ -27,12 +27,10 @@ def handle_bad_request(error):
 
 
 def successful_response(message=''):
-    return jsonify(
-        {
-            'status': 200,
-            'message': message
-        }
-    ), 200
+    return {
+        'status': 200,
+        'message': message
+    }
 
 
 def get_request_data() -> dict:
