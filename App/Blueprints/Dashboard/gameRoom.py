@@ -1,8 +1,11 @@
+
 from flask import render_template, url_for, request
 from App.Api.CodeRunner import runcode
 from App.Websockets.base import websockets, ws_login_required
 
-from .base import gameRoom
+
+from .base import dashboard
+
 
 
 default_c_code = """#include <stdio.h>

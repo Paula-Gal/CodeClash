@@ -1,21 +1,15 @@
-from logging import debug
-from App.Blueprints.Dashboard import gameRoom
 from flask import Flask
 
-from App.Database import db
 from App.Blueprints.Landing import landing
 from App.Blueprints.Dashboard import dashboard
-from App.Blueprints.Dashboard import learningenv
-from App.Blueprints.Dashboard import gameRoom
-from App.Blueprints.Dashboard import waiting
+from App.Database import db
 from App.LoginManager import login_manager
 from App.Blueprints.Administrator import admin
 from App.Blueprints.Account import login
-#from App.Websockets.base import websockets
-from App.Websockets.base import websockets
 from App.Tests.database import populate_database
+from App.Websockets import websockets
 from config import BasicConfig
-from App.Api.Dashboard.dashboard import *
+from App.Api import api
 
 
 app = Flask(__name__)
@@ -28,11 +22,8 @@ login_manager.init_app(app)
 
 app.register_blueprint(landing)
 app.register_blueprint(dashboard)
-app.register_blueprint(learningenv)
 app.register_blueprint(login)
-app.register_blueprint(gameRoom)
-app.register_blueprint(waiting)
-
+app.register_blueprint(api)
 
 admin.init_app(app)
 
@@ -43,4 +34,4 @@ with app.app_context():
 
 websockets.init_app(app)
 
-websockets.run(app, log_output=True, debug=True, port=5000)
+websockets.run(app, log_output=True, debug=True, port=5000, host='192.168.99.100')

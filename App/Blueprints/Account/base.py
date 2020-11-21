@@ -1,8 +1,8 @@
 from flask import Blueprint
 
 login = Blueprint(
-    'login',
+    'account',
     __name__,
     template_folder='templates'
-    #static_folder='App/static',
+    # static_folder='App/static',
 )

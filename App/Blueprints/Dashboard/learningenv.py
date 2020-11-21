@@ -1,9 +1,11 @@
 from flask import render_template, url_for
+from flask_login import login_required
 
-from .base import learningenv
+from .base import dashboard
 
 
-@learningenv.route('/dashboard/learning-environment')
-def handle_index():
-    return render_template('learningenv.html', title = 'Code Clash learning env')
+@dashboard.route('/dashboard/learning-environment')
+@login_required
+def handle_leaning_environment():
+    return render_template('learningenv.html', title='Code Clash learning env')
 
