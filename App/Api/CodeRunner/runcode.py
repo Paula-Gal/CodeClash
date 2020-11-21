@@ -91,6 +91,8 @@ class RunPyCode(object):
         result = p.wait()
         a, b = p.communicate()
         self.stdout, self.stderr = a.decode("utf-8"), b.decode("utf-8")
+        if self.stderr is not '':
+            self.stdout = self.stderr
         return result
     
     def run_py_code(self, code=None):

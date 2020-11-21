@@ -38,3 +38,25 @@ li {
 #text-result{
     max-width: 100%;
 }
+
+.option{
+    display: inline-block;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 3px;
+    width: 4rem;
+    text-align: center;
+}
+
+.option:hover{
+    cursor: pointer;
+}
+
+.active1{
+    background-color: darkslategrey;
+    color: white;
+}
+
+.links{
+    width: 100%;
+}

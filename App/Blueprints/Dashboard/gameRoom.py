@@ -1,5 +1,6 @@
 from flask import render_template, url_for, request
 from App.Api.CodeRunner import runcode
+from App.Websockets.base import websockets, ws_login_required
 
 from .base import gameRoom
 
@@ -28,11 +29,50 @@ default_py_code = """import sys
 import os
 
 if __name__ == "__main__":
-    print "Hello Python World!!"
+    print("Hello Python World!!")
 """
 
 default_rows = "15"
 default_cols = "60"
+
+
+#@websockets.on("codeReview")
+#    returns that tuple
+
+
+@websockets.on('code-review')
+#@ws_login_required
+def handle_code_review(message):
+    code = message['code']
+    lang = message['lang']
+    if lang == 'C':
+        run = runcode.RunCCode(code)
+        rescompil, resrun = run.run_c_code()
+    elif lang == 'py':
+        run = runcode.RunPyCode(code)
+        rescompil, resrun = run.run_py_code()
+    elif lang == 'cpp':
+        run = runcode.RunCppCode(code)
+        rescompil, resrun = run.run_cpp_code()
+    if resrun == 'No run done':
+        resrun = rescompil
+    websockets.emit('code-review-complete', resrun)
+
+
+@websockets.on('lang-changed')
+#@ws_login_required
+def handle_lang_changed(message):
+    lang = message
+    print(lang)
+    if lang == 'C':
+        websockets.emit('lang-changed-returned', default_c_code)
+    elif lang == 'py':
+        websockets.emit('lang-changed-returned', default_py_code)
+    elif lang == 'cpp':
+        websockets.emit('lang-changed-returned', default_cpp_code)
+    else: 
+        websockets.emit('lang-changed-returned', default_c_code)
+
 
 
 @gameRoom.route('/room', methods=['POST', 'GET'])

@@ -79,27 +79,25 @@
 
         <div id="links">
             <ul>
-            <li><a href="/">C Code</a></li>
-            <li><a href="/cpp">C++ Code</a></li>
-            <li><a href="/py">Python Code</a></li>
+            <li><div class = "option" id = "c">C</div></li>
+            <li><div class = "option ml-5" id = "cpp">C++</div></li>
+            <li><div class = "option ml-5" id = "python">Python</div></li>
             </ul>
         </div>
 
         <div class="row h-75">
             <div class="col-md-12">
                     <!-- ************  CODING ZONE  ************ -->
-                <form method="post" action="/room">
                     <div id="title-code" class="head-section">
                     Source Code
                     </div>
                     <textarea id="text-code" name="code" rows={{ rows }} cols={{ cols }}>
-                        {{ code }}
+                        
                         </textarea><br/>
-                        <div id="text-code-ace" class="hidden">{{ code }}</div>
+                        <div id="text-code-ace" class="hidden"></div>
                         <div class = "text-center">
-                            <input id="launch-button" class="btn btn-lg btn-primary mb-4 mt-3" type="submit" value="Run code" />
+                            <button id="launch-button" class="btn btn-lg btn-primary mb-4 mt-3" onclick="review_code();">Run code</button>
                         </div>
-                </form>
                     
             </div>
 
@@ -107,11 +105,7 @@
                 <div id="title-result" class="head-section">
                     Output result
                 </div>
-                {% if resrun == 'No run done' %}
-                    <textarea id="text-result" rows="18" cols="140" readonly>{{ rescomp }}</textarea>
-                {% else %}
-                    <textarea id="text-result" rows="18" cols="140" readonly>{{ resrun }}</textarea>
-                {% endif %}
+                    <textarea id="text-result" rows="18" cols="140" readonly></textarea>
             </div>
 
             <!--<div class="col-md-12">
@@ -152,6 +146,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+        
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+    <script src="static/javascripts/clientSockets/socketConnect.js"></script>
+    <script src="static/javascripts/clientSockets/gameRoomSocket.js"></script>
 </body>
 
 </html>
