@@ -7,8 +7,8 @@ def ws_login_required(f):
     @functools.wraps(f)
     def wrapped(*args, **kwargs):
         if not current_user.is_authenticated:
-            pass
-            #flask_socketio.disconnect()
+            # pass
+            flask_socketio.disconnect()
         else:
             return f(*args, **kwargs)
     return wrapped
