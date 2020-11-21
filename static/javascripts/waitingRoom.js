@@ -1,6 +1,7 @@
 var blobs = document.querySelectorAll('.blob');
 
 window.onload = function () {
+    findGame();
     setVisible('.page', false);
     $('.page').fadeIn(500);
 }

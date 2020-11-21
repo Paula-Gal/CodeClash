@@ -7,7 +7,7 @@ from App.Database import db
 from App.Database.Models.user import User
 
 
-@api.route('/login', methods=['POST'])
+@api.route('/login1', methods=['POST'])
 def handle_login():
     """
     This route authenticate the user.
@@ -29,7 +29,7 @@ def handle_login():
     if not user.check_password(password):
         raise BadRequest('WrongPassword', 'incorrect password')
 
-    login_user(user, remember=True)
+    login_user(user, remember=False)
 
     return successful_response()
 
@@ -124,7 +124,7 @@ def handle_user_profile_update():
         raise BadRequest(str(e))
 
 
-@api.route('update_password', methods=['POST'])
+@api.route('/update_password', methods=['POST'])
 @login_required
 def handle_update_password():
     """
@@ -147,3 +147,4 @@ def handle_update_password():
         pass
 
     raise BadRequest('ValueError', 'Unknown error occurred')
+
