@@ -13,7 +13,5 @@ class ProblemTest(db.Model):
     max_memory_size = db.Column(db.Integer(), nullable=False)
     points = db.Column(db.Integer, nullable=False)
 
-    def __init__(self):
-        pass
-
-
+    # def __init__(self):
+    #    pass
