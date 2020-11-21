@@ -73,13 +73,12 @@ def handle_lang_changed(message):
         websockets.emit('lang-changed-returned', default_py_code)
     elif lang == 'cpp':
         websockets.emit('lang-changed-returned', default_cpp_code)
-    else: 
+    else:
         websockets.emit('lang-changed-returned', default_c_code)
 
 
-
-@gameRoom.route('/room', methods=['POST', 'GET'])
-def handle_index():
+@dashboard.route('/room', methods=['POST', 'GET'])
+def handle_room():
     if request.method == 'POST':
         code = request.form['code']
         run = runcode.RunCCode(code)
@@ -97,6 +96,6 @@ def handle_index():
                            rescomp=rescompil,
                            rows=default_rows, cols=default_cols)
     #return render_template('gameRoom.html', title = 'Game Room')
-    
+
 
 
