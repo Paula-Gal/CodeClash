@@ -1,6 +1,6 @@
 window.onload = function () {
+    $('#loading').fadeIn(500);
     $('.btn-dashboard').addClass('scale-up-center');
-    $('#loading').fadeIn(350);
 }
 
 onReady(function () {
@@ -11,7 +11,7 @@ onReady(function () {
     setTimeout(function(){
         setVisible('.page', true);
         setVisible('#loading', false);
-    }, 500);
+    }, 1000);
 });
 
 function onReady(callback) {
