@@ -34,4 +34,4 @@ with app.app_context():
 
 websockets.init_app(app)
 
-websockets.run(app, log_output=True, debug=True, port=5000, host='192.168.99.100')
+websockets.run(app, log_output=True, debug=True, port=5000, host='localhost')
