@@ -13,6 +13,7 @@ def run_test(test: ProblemTest, code):
 def test_code(code):
     return random.randint(0, 100) < 10
 
+
 """
 @websockets.on('find_match')
 @ws_login_required
@@ -31,8 +32,9 @@ def _handle_submit_code(message):
 
 waiting_for_match = []
 
+
 @websockets.on('find_game')
-#@ws_login_required
+@ws_login_required
 def _handle_find_game():
     global waiting_for_match
 

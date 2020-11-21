@@ -44,7 +44,7 @@ default_cols = "60"
 
 
 @websockets.on('code-review')
-#@ws_login_required
+@ws_login_required
 def handle_code_review(message):
     code = message['code']
     lang = message['lang']
@@ -63,10 +63,10 @@ def handle_code_review(message):
 
 
 @websockets.on('lang-changed')
-#@ws_login_required
+@ws_login_required
 def handle_lang_changed(message):
     lang = message
-    print(lang)
+    # print(lang)
     if lang == 'C':
         websockets.emit('lang-changed-returned', default_c_code)
     elif lang == 'py':
@@ -94,7 +94,8 @@ def handle_room():
                            target="runc",
                            resrun=resrun,
                            rescomp=rescompil,
-                           rows=default_rows, cols=default_cols)
+                           rows=default_rows,
+                           cols=default_cols)
     #return render_template('gameRoom.html', title = 'Game Room')
 
 
